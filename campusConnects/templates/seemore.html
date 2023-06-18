@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<style media="screen">
+  .a{
+
+      background-image: linear-gradient(to right,#0b2447, #DFF6FF,#0b2447);
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+
+  }
+  .scroller-card {
+      height: 600px;
+      width: 60%;
+      overflow-y: scroll;
+      background-color: #DFF6FF;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 30px;
+      margin-top: 70px;
+      box-shadow: inset 0px 5px 10px 0px rgba(76, 113, 148, 0.7);
+    }
+
+  .scroller {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+   .x{
+      background-color: #0b2447;
+      color:#DFF6FF;
+      width: 100%;
+      height: 10vh;
+      font-size: 50px;
+      font-weight:bolder;
+      font-family: cursive;
+      text-align: center;
+   }
+   .z{
+      font-size: 40px;
+      width: 100%;
+      text-align: center;
+      font-weight:bold;
+      font-family: cursive;
+      color:#DFF6FF;
+      background-color: #5b859d;
+
+   }
+
+   .y{
+      width: 80%;
+      align-items: center;
+      text-align: center;
+   }
+
+
+   @media (max-width: 767px) {
+      .scroller-card {
+          padding: 10px;
+      }
+      .y {
+          padding: 0;
+      }
+      .y img {
+          width: 100%;
+          height: auto;
+          border-radius: 0;
+      }
+      .x {
+          font-size: 18px;
+          height: auto;
+          width: 100%;
+      }
+  }
+
+
+
+
+</style>
+<div class="a">
+<div class="scroller-card">
+    <div class="scroller">
+            <p class="card-text">
+                <p class="x">Google Developer Student Clubs</p>
+                <p class="z">{{detail.title}}</p>
+                <hr>
+                <div class="y">
+                    <div><img src="/media/{{detail.image}}" style="width: 350px;height: 450px;border-radius: 20px;"> </div><br><br>
+                    <div style="background-color: #0B2447;color: #DFF6FF;border-radius: 20px;"><p><br>
+                        long description
+
+
+
+                    <br>
+                    <br>
+                    </p></div>
+                </div><br>
+                <!-- <div> <img src="qr_code_barcode.jpg" style="width: 150px;height: 150px;"> </div><br> -->
+                <button class="x"  style="background-color: rgb(94, 94, 254);height: 8vh;width: 210px;border: none; border-radius: 10px;color: #F1F6F9;"><h5>Register Now</h5></button><br>
+            </p>
+    </div>
+</div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% load static %}
+{% for i in event %}
+<div>
+  <div class="card" style="width: 18rem;">
+    <img src="/media/{{i.image}}" class="card-img-top" >
+    <div class="card-body">
+
+      <h5 class="card-title">{{i.title}}</h5>
+      <p class="card-text">{{i.description}}</p>
+
+      <a href="#" class="btn btn-primary">Register Now</a>
+      <a href="{% url 'base:seemore' i.id %}" class="btn btn-primary" style="width: 45%;background-color: #0B2447;color: #F1F6F9">See more</a>
+    </div>
+  </div>
+</div>
+{% endfor %}

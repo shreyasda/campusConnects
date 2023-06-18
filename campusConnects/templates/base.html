@@ -1,0 +1,83 @@
+{%load crispy_forms_tags %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'base/css/homestyle.css'%}">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    </style>
+  </head>
+<body class="p-3 m-0 border-0 bd-example">
+<div>
+        <!-- <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid" style="height: 8vh;">
+              <form class="d-flex" role="search">
+              <div class="search">
+                <input class="search" type="search" placeholder="Search" aria-label="Search"  >
+                <button class="btn btn-outline-success" type="submit" fdprocessedid="ap3xpq" style="margin-left: 30px;">Search</button>
+              </div>
+              <div class="right-align">
+                <div class="login">
+                  <img src="{% static 'base/images/campus_logo.png'%}"  style="width: auto;height: 5vh;padding-left: 400px;">
+                  <div style="padding-left: 590px;">
+                    {% if user.is_authenticated %}
+                    <button class="btn btn-outline-success" type="submit"><a href="{% url 'logout' %} ">Logout</a></button>
+                    {% else %}
+                    <button class="btn btn-outline-success" type="submit"><a href="{% url 'base:login' %} ">Login</a></button>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              </form>
+          </div>
+        </nav> -->
+        <div class="header">
+          <input type="text" style="height: 5vh;width:220px;margin-left: 60px ;border-radius: 10px;border: none;" >
+          <button class="x" type="submit" style="background-color: rgb(94, 94, 254); margin-left: 10px;height: 5vh;width: 110px ; border: none; border-radius: 10px;color: #F1F6F9;padding-top: 5px;"><h5>submit</h5></button>
+          <img src="{% static 'base/images/campus_logo.png'%}" style="width: 170px;height:60px ;margin-left: 300px;padding-bottom: 5px;">
+
+
+          <div class="topnav-right" style="float:right">
+            {% if user.is_authenticated %}
+            <button class="x"  style="background-color: rgb(94, 94, 254); margin-left:450px; height: 5vh;width: 110px;border: none; border-radius: 10px;color: #F1F6F9;padding-top: 5px;"><h5><a class = "logout-btn" href="{% url 'logout' %} ">Logout</a></h5></button>
+            {% else %}
+            <a class = "login-btn" href="{% url 'base:login' %} "><button class="x"  style="background-color: rgb(94, 94, 254); margin-left:450px; height: 5vh;width: 110px;border: none; border-radius: 10px;color: #F1F6F9;padding-top: 5px;"><h5>Login</h5></button></a>
+            {% endif %}
+
+          </div>
+
+        </div>
+        <!-- <div class="topnav">
+          <img src="{% static 'base/images/campus_logo.png'%}" style="width: 170px;height:60px ;margin-left: 10px;padding-bottom: 5px;">
+          <a href="#">Ongoing Events</a>
+          <a href="#">Upcoming Events</a>
+          <a href="#">Contact Us</a>
+          <div class="topnav-right">
+            <a href="#">Login</a>
+
+          </div>
+        </div> -->
+
+    {% if user.is_authenticated %}
+    <div class="jumbotron">
+      <h3>Register for your event here..</h3>
+      <button class="btn btn-outline-success" type="submit"><a class = "register" href="{% url 'base:registration' %} ">Register</a></button>
+    </div>
+    <br><br>
+    {% endif %}
+    {% block content %}
+
+    {% endblock content%}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

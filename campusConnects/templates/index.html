@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<br><br>
+<pre class="h">    ONGOING EVENTS<br></pre>
+
+
+
+
+<div class="ongoing" style="display: flex;">
+  {% include 'ongoing.html' %}
+
+</div>
+<br>
+<hr><hr>
+<br>
+<pre class="h">UPCOMING EVENTS<br></pre>
+<br>
+<div class="upcomming" style="display: flex;">
+
+  {% include "upcoming.html" %}
+
+
+  </div>
+</div>
+</div>
+<br><br>
+<div class="footer" style="background-color: #0B2447;color: #F1F6F9; width: 100% ;text-align: center;"><br>
+  <p>2020 arfa, Inc. All rights reserved.</p>
+  <p>for any queries and admin access</p>
+  <p style="font-weight: bold;font-size: medium;"> Contact us</p>
+      <button class="x"  style="background-color: rgb(94, 94, 254);margin-right: 10px;height: 5vh;width: 110px;border: none; border-radius: 10px;color: #F1F6F9;padding-top: 5px;"><h6>Whatsapp</h6></button>
+      <button class="x"  style="background-color: rgb(94, 94, 254);height: 5vh;width: 110px;border: none; border-radius: 10px;color: #F1F6F9;padding-top: 5px;"><h6>Gmail</h6></button>
+
+  <br><br>
+</div>
+{% endblock %}

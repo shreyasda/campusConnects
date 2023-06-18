@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<style media="screen">
+  body{
+      /* background-image:  url('a.jpg'); */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      /* backdrop-filter: blur(5px); */
+      background: rgb(2,0,36);
+      background: linear-gradient(240deg, rgba(2,0,36,1) 0%, rgba(1,37,51,0.8303960006429542) 46%, rgba(5,210,249,1) 100%);
+      width: 100%;
+      height: 100%;
+  }
+</style>
+<form class="" action="" method="post">
+  {% csrf_token %}
+    <div class="content">
+        <h1 class="a">Register</h1><br>
+        <label>Username : </label> <br>
+        {{form.username}}<br><br>
+        <label>Email : </label> <br>
+        {{form.email}}<br><br>
+        <label>Password : </label> <br>
+        {{form.password1}}<br><br>
+        <label>Confirm Password : </label> <br>
+        {{form.password2}}<br><br>
+        {{form.errors}}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+        <button class="login-btn" type="submit">Register</button> <br><br>
+        <input type="checkbox" checked="checked"> Remember me
+        <a href="#">  Forgot password? </a>
+    </div>
+</form>
+<!-- <form class="" action="" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" name="" value="">
+</form> -->
+
+
+{% endblock %}
